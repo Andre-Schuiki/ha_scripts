@@ -1,0 +1,18 @@
+energy_statistics:
+  sensor.reading_p_out:
+    type: compensation
+    start_date: 01.01.2023
+    end_date: 31.12.2023
+    periods:
+      '17.02.2023': 0.0 # einspeisung erst ab 17.02.2023
+      '01.04.2023': 0.26864
+      '01.07.2023': 0.14457
+      '01.10.2023': 0.13691
+      '01.01.2024': 0.13691
+  sensor.reading_p_in:
+    type: cost
+    start_date: 01.01.2022
+    end_date: 31.12.2023
+    periods:
+      '31.08.2024': 0.225
+      '01.09.2024': 0.28072
