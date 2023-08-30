@@ -122,15 +122,15 @@ if energy_statistics:
                         if counter == 4:
                             record_date_str = f'{date_str} {time_str}'
                             record_date = datetime.datetime.strptime(f'{date_str} {time_str}', '%d.%m.%Y %H:%M:%S')
-                            # if record_date_str in resets:
-                            #     offset = s_data['resets'].get(record_date_str)
-                            #
-                            #     if offset:
-                            #         meter_reading = offset['offset']
-                            #         statistic_sum = offset['offset']
-                            #     else:
-                            #         meter_reading = 0
-                            #         statistic_sum = 0
+                            if record_date_str in resets:
+                                offset = s_data['resets'].get(record_date_str)
+
+                                if offset:
+                                    meter_reading = offset['offset']
+                                    #statistic_sum = offset['offset']
+                                else:
+                                    meter_reading = 0
+                                    #statistic_sum = 0
                             meter_reading += hour_sum
                             statistic_sum += hour_sum
                             csv_import_data.append([statistics_entity_db_id, meter_reading, statistic_sum, record_date, record_date, hour_sum])
